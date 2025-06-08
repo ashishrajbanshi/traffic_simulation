@@ -1,0 +1,10 @@
+<edges>
+    <edge id="AtoJ" from="A" to="J"/>
+    <edge id="BtoJ" from="B" to="J"/>
+    <edge id="CtoJ" from="C" to="J"/>
+    <edge id="DtoJ" from="D" to="J"/>
+    <edge id="JtoA" from="J" to="A"/>
+    <edge id="JtoB" from="J" to="B"/>
+    <edge id="JtoC" from="J" to="C"/>
+    <edge id="JtoD" from="J" to="D"/>
+</edges>
