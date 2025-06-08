@@ -1,23 +1,8 @@
-# 🛑 Traffic Intersection Simulation with SUMO
+# Traffic Intersection Simulation with SUMO
 
-Simulate a four-way traffic intersection using SUMO and TraCI with Python. This project models vehicle movement, traffic light control, accumulation of queue lengths, and produces analytics.
+This project models vehicle movement, traffic light control, accumulation of queue lengths, and produces analytics. Simulate a four-way traffic intersection using SUMO and TraCI with Python.
 
-## 📁 Project Structure
-
-```
-.
-├── network/
-│   ├── intersection.edg.xml       # Edges (roads) between nodes
-│   ├── intersection.nod.xml       # Junction and node definitions
-│   ├── intersection.net.xml       # Generated network file (via netconvert)
-│   ├── intersection.rou.xml       # Vehicle routes and definitions
-│   └── intersection.sumocfg       # SUMO config linking network and routes
-├── traffic_sim.py                # Python script running SUMO via traci
-├── intersection_stats.csv        # (Output) Collected vehicle statistics
-└── queue_plot.png                # (Output) Plot showing queue length over time
-```
-
-## ⚙️ File Descriptions
+## File Descriptions
 
 ### 1. `network/intersection.edg.xml` & `.nod.xml`
 - Define the **structure** of the intersection: nodes A, B, C, D, and central junction J.
@@ -35,11 +20,11 @@ Simulate a four-way traffic intersection using SUMO and TraCI with Python. This 
 ### 4. `network/intersection.sumocfg`
 - Configuration file for SUMO specifying paths to `.net.xml` and `.rou.xml`.
 
-## 📝 `traffic_sim.py`
+## `traffic_sim.py`
 
 Python script tying everything together using `traci`:
 
-- ✅ **Simulation**:
+- **Simulation**:
   - Launches SUMO with `intersection.sumocfg`.
   - Runs until no active vehicles remain.
   - Every step:
@@ -48,13 +33,13 @@ Python script tying everything together using `traci`:
     - Captures vehicle ID, speed, position, waiting time, current edge.
     - Records data into a list of dicts.
 
-- ✅ **Output Generation**:
+- **Output Generation**:
   - Data is converted into a DataFrame.
   - Saved as **`intersection_stats.csv`**.
   - Detects stopped vehicles (speed < 0.1) and counts queue length per step.
   - Produces **`queue_plot.png`** visualizing queue length over time.
 
-## 📊 Outputs Explained
+## Outputs Explained
 
 ### `intersection_stats.csv`
 Columns:
@@ -80,7 +65,7 @@ Columns:
      pip install pandas matplotlib sumolib traci
      ```
 
-2. **Generate network** (optional):
+2. **Generate network** :
    ```bash
    netconvert      --node-files network/intersection.nod.xml      --edge-files network/intersection.edg.xml      --output-file network/intersection.net.xml
    ```
@@ -94,13 +79,13 @@ Columns:
    - `intersection_stats.csv` – raw vehicle data.
    - `queue_plot.png` – visual queue analysis.
 
-## 🧠 Extending the Project
+## Extending the Project
 
 - **Traffic light logic**: Replace static phase control with dynamic or actuated logic in XML or via `traci.trafficlight`.
 - **More vehicles/routes**: Add vehicle entries in `.rou.xml`.
 - **Performance metrics**: Analyze average wait, travel times, speed distributions.
 - **Shift to GUI**: Use SUMO-GUI for visualization by launching with `sumo-gui`.
 
-## ✅ Summary
+## Summary
 
 This project sets up a simple SUMO-based simulation of a four-way intersection, controlled via Python and TraCI. It gathers detailed movement data and computes queue lengths, producing both a CSV and a matplotlib plot for post-run analysis.
