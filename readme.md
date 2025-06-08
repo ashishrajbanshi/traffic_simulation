@@ -1,4 +1,4 @@
-# 🚦 Traffic Intersection Simulation with SUMO and Python
+# Traffic Intersection Simulation with SUMO and Python
 
 This project simulates vehicle flow through a four-way traffic intersection using **SUMO (Simulation of Urban MObility)** and **Python** via the **TraCI** interface. It models traffic light control, vehicle movement, and vehicle queue length over time, and generates analytics including a CSV log and a queue length visualization.
 
