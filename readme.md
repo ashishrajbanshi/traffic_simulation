@@ -12,10 +12,6 @@ Simulate a four-way traffic intersection using SUMO and TraCI with Python. This 
 │   ├── intersection.net.xml       # Generated network file (via netconvert)
 │   ├── intersection.rou.xml       # Vehicle routes and definitions
 │   └── intersection.sumocfg       # SUMO config linking network and routes
-├── simple_net/                    # Intermediate netconvert input files
-│   ├── intersection.edg.xml
-│   ├── intersection.nod.xml
-│   └── intersection.net.xml       # Output from netconvert
 ├── traffic_sim.py                # Python script running SUMO via traci
 ├── intersection_stats.csv        # (Output) Collected vehicle statistics
 └── queue_plot.png                # (Output) Plot showing queue length over time
